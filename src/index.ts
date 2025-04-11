@@ -7,6 +7,7 @@ import { validateConfig } from "./config.js";
 import { registerResources } from "./resources.js";
 import { registerSemanticSearchTool } from "./tools/SemanticSearchTool.js";
 import { registerQueryTool } from "./tools/QueryTool.js";
+import { registerAgentTools } from "./tools/AgentTools.js";
 
 async function main() {
   try {
@@ -29,6 +30,7 @@ async function main() {
       registerResources(server);
       registerSemanticSearchTool(server);
       registerQueryTool(server);
+      registerAgentTools(server);
 
       // Set up stdio transport
       const transport = new StdioServerTransport();
@@ -53,6 +55,7 @@ async function main() {
       registerResources(server);
       registerSemanticSearchTool(server);
       registerQueryTool(server);
+      registerAgentTools(server);
 
       // Set up SSE transport
       let transport: SSEServerTransport | null = null;
