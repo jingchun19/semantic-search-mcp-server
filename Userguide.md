@@ -319,6 +319,7 @@ If you encounter issues not covered in this guide, please contact the DevOps tea
 ## Project Prompt
 
 ![Claude Project Prompt](images/ClaudePrompt.png)
+![Claude Project Prompt 2](images/ClaudeInstruction.png)
 
 Copy and paste the prompt below into Claude Desktop to begin your market research project, under Project Knowledge:
 
