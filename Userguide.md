@@ -93,19 +93,26 @@ docker build -t mcp/tavily:latest .
 ## 3. Configuring Claude Desktop
 
 1. Open Claude Desktop
-2. Navigate to Settings → Advanced → MCP Configuration
-3. You'll see the Developer settings screen as shown below. Click "Edit Config" to modify the configuration:
+2. Navigate to Settings by:
+   - Hovering over the 3 lines menu at the top left of the Claude Desktop interface
+   - Clicking on File, then Settings
+   - Or using the keyboard shortcut Ctrl+Comma
+
+![Navigation to Settings](settingNavigation.png)
+
+3. In the Settings dialog, you'll see two tabs: General and Developer. Click on the Developer tab.
+4. In the Developer tab, you'll see the MCP Configuration section. Click "Edit Config" to modify the configuration:
 
 ![Developer Settings Screen](DeveloperSetting.png)
 
 > **Note**: Don't worry about the warning icon next to semantic-search in the interface. This is expected and the server is working properly despite the warning.
 
-4. Clicking "Edit Config" will open the folder containing the configuration file:
+5. Clicking "Edit Config" will open the folder containing the configuration file:
 
 ![Claude Desktop Config Folder](folderDirectory.png)
 
-5. Open the `claude_desktop_config.json` file in a text editor
-6. Replace the contents with the configuration below:
+6. Open the `claude_desktop_config.json` file in a text editor
+7. Replace the contents with the configuration below:
 
 ```json
 {
@@ -171,7 +178,8 @@ docker build -t mcp/tavily:latest .
 }
 ```
 
-5. **Important**: Replace `[YOUR_USERNAME]` in the filesystem configuration with your Windows username.
+8. **Important**: Replace `[YOUR_USERNAME]` in the filesystem configuration with your Windows username.
+9. Save the file and restart Claude Desktop
 
 ## Important Notes About API Keys
 
@@ -444,3 +452,26 @@ By keeping this setting disabled, you can maintain the proper startup sequence:
 2. Wait for Docker to fully initialize
 3. Launch Claude Desktop
 4. Begin your research with all tools available
+
+## Verifying Your Setup
+
+### Docker Desktop
+
+When everything is correctly set up, your Docker Desktop should show all the MCP server containers running, similar to the image below:
+
+![Docker Desktop with Running Containers](DockerDesktop.png)
+
+You should see containers for sequential-thinking, semantic-search, filesystem, brave-search, and tavily all running simultaneously.
+
+### Claude Desktop Tools
+
+To verify that Claude has successfully loaded the MCP tools:
+
+1. In Claude Desktop, look for the hammer icon in the interface
+2. Hover over the hammer icon to see the number of tools available
+
+![MCP Tools Available in Claude](McpToolsAvailable.png)
+
+The number of tools displayed will depend on how many MCP servers you've configured and successfully started. When all tools are properly loaded, Claude will be able to use them in your conversations to assist with research tasks.
+
+If you don't see the expected number of tools, try restarting Claude Desktop or check the Docker containers to ensure they're all running properly.
