@@ -1,6 +1,13 @@
 # semantic-search-mcp-server
 
-A Model Context Protocol (MCP) server built with mcp-framework.
+A Model Context Protocol (MCP) server built with mcp-framework for enhancing Claude Desktop with semantic search capabilities.
+
+## Documentation
+
+For detailed setup instructions and usage:
+
+- **[User Guide](Userguide.md)** - Step-by-step setup instructions for Claude Desktop users
+- **[Developer Guide](DeveloperGuide.md)** - Technical information for developers working on or extending this server
 
 ## Quick Start
 
@@ -21,11 +28,17 @@ semantic-search-mcp-server/
 │   ├── tools/        # MCP Tools
 │   │   └── ExampleTool.ts
 │   └── index.ts      # Server entry point
+├── Userguide.md      # Setup guide for Claude Desktop users
+├── DeveloperGuide.md # Technical guide for developers
 ├── package.json
 └── tsconfig.json
 ```
 
-## Adding Components
+## For Developers
+
+The sections below contain technical information for those who want to modify or extend the server.
+
+### Adding Components
 
 The project comes with an example tool in `src/tools/ExampleTool.ts`. You can add more tools using the CLI:
 
