@@ -90,6 +90,87 @@ cd tavily-mcp
 docker build -t mcp/tavily:latest .
 ```
 
+### 2.6. Summary of Setup Steps for Non-Technical Users
+
+Below is a simplified step-by-step guide to set up all the necessary servers:
+
+1. **Create a project folder**:
+   - Create a new folder on your desktop called "Claude-MCP-Setup"
+   - Open this folder in a code editor like Visual Studio Code or Notepad++
+
+2. **Open a command prompt or terminal**:
+   - Right-click inside your "Claude-MCP-Setup" folder while holding Shift
+   - Select "Open in Terminal" or "Open command window here"
+
+3. **Set up the Docker network**:
+   - Type this command and press Enter:
+     ```
+     docker network create mcp-network
+     ```
+
+4. **Build the Sequential Thinking server**:
+   - Type these commands one by one, pressing Enter after each:
+     ```
+     git clone https://github.com/modelcontextprotocol/servers.git
+     cd servers
+     docker build -t mcp/sequentialthinking -f src/sequentialthinking/Dockerfile .
+     ```
+   - Go back to the main folder:
+     ```
+     cd ..
+     ```
+
+5. **Build the Semantic Search server**:
+   - Type these commands one by one, pressing Enter after each:
+     ```
+     git clone https://github.com/jingchun19/semantic-search-mcp-server.git
+     cd semantic-search-mcp-server
+     docker build -t semantic-search-mcp-server:latest .
+     ```
+   - Go back to the main folder:
+     ```
+     cd ..
+     ```
+
+6. **Build the Filesystem server**:
+   - Return to the servers folder:
+     ```
+     cd servers
+     ```
+   - Build the server:
+     ```
+     docker build -t mcp/filesystem -f src/filesystem/Dockerfile .
+     ```
+   - You're already in the servers folder, so no need to navigate
+
+7. **Build the Brave Search server**:
+   - You're already in the servers folder, so just run:
+     ```
+     docker build -t mcp/brave-search:latest -f src/brave-search/Dockerfile .
+     ```
+
+8. **Build the Tavily Search server**:
+   - Go back to the main folder:
+     ```
+     cd ..
+     ```
+   - Type these commands one by one, pressing Enter after each:
+     ```
+     git clone https://github.com/tavily-ai/tavily-mcp.git
+     cd tavily-mcp
+     docker build -t mcp/tavily:latest .
+     ```
+
+9. **Verify your work**:
+   - Open Docker Desktop
+   - Go to the "Images" section
+   - You should see the following images listed:
+     - mcp/sequentialthinking
+     - semantic-search-mcp-server
+     - mcp/filesystem
+     - mcp/brave-search
+     - mcp/tavily
+
 ## 3. Configuring Claude Desktop
 
 1. Open Claude Desktop
@@ -98,18 +179,18 @@ docker build -t mcp/tavily:latest .
    - Clicking on File, then Settings
    - Or using the keyboard shortcut Ctrl+Comma
 
-![Navigation to Settings](settingNavigation.png)
+![Navigation to Settings](images/settingNavigation.png)
 
 3. In the Settings dialog, you'll see two tabs: General and Developer. Click on the Developer tab.
 4. In the Developer tab, you'll see the MCP Configuration section. Click "Edit Config" to modify the configuration:
 
-![Developer Settings Screen](DeveloperSetting.png)
+![Developer Settings Screen](images/DeveloperSetting.png)
 
 > **Note**: Don't worry about the warning icon next to semantic-search in the interface. This is expected and the server is working properly despite the warning.
 
 5. Clicking "Edit Config" will open the folder containing the configuration file:
 
-![Claude Desktop Config Folder](folderDirectory.png)
+![Claude Desktop Config Folder](images/folderDirectory.png)
 
 6. Open the `claude_desktop_config.json` file in a text editor
 7. Replace the contents with the configuration below:
@@ -445,7 +526,7 @@ The MCP servers run in Docker containers, so Docker Desktop must be running firs
 
 It's recommended to disable the "Run on Startup" setting in Claude Desktop to ensure you can start Docker first.
 
-![Claude Run on Startup Setting](ClaudeRunOnStartup.png)
+![Claude Run on Startup Setting](images/ClaudeRunOnStartup.png)
 
 By keeping this setting disabled, you can maintain the proper startup sequence:
 1. Start Docker Desktop first
@@ -459,7 +540,7 @@ By keeping this setting disabled, you can maintain the proper startup sequence:
 
 When everything is correctly set up, your Docker Desktop should show all the MCP server containers running, similar to the image below:
 
-![Docker Desktop with Running Containers](DockerDesktop.png)
+![Docker Desktop with Running Containers](images/DockerDesktop.png)
 
 You should see containers for sequential-thinking, semantic-search, filesystem, brave-search, and tavily all running simultaneously.
 
@@ -470,7 +551,7 @@ To verify that Claude has successfully loaded the MCP tools:
 1. In Claude Desktop, look for the hammer icon in the interface
 2. Hover over the hammer icon to see the number of tools available
 
-![MCP Tools Available in Claude](McpToolsAvailable.png)
+![MCP Tools Available in Claude](images/McpToolsAvailable.png)
 
 The number of tools displayed will depend on how many MCP servers you've configured and successfully started. When all tools are properly loaded, Claude will be able to use them in your conversations to assist with research tasks.
 

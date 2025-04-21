@@ -9,7 +9,7 @@ This guide explains how to maintain and manage the API keys used by the Model Co
 
 The semantic search server uses the Nebius API for AI services. This API key is formatted to be compatible with OpenAI's API structure but points to Nebius's endpoint.
 
-![Nebius API Dashboard](NebiusAPI.png)
+![Nebius API Dashboard](images/NebiusAPI.png)
 
 ### Monitoring and Maintenance
 
@@ -43,7 +43,7 @@ The semantic search server uses the Nebius API for AI services. This API key is 
 
 Brave Search API provides web search capabilities to Claude, enabling real-time information retrieval.
 
-![Brave Search API Dashboard](BraveSearchAPI.png)
+![Brave Search API Dashboard](images/BraveSearchAPI.png)
 
 ### Monitoring and Maintenance
 
@@ -81,7 +81,7 @@ Brave Search API provides web search capabilities to Claude, enabling real-time 
 
 Tavily provides specialized search capabilities with enhanced context retrieval for deeper research scenarios.
 
-![Tavily Search API Dashboard](TavilySearchAPI.png)
+![Tavily Search API Dashboard](images/TavilySearchAPI.png)
 
 ### Monitoring and Maintenance
 
