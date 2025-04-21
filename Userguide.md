@@ -161,6 +161,12 @@ docker build -t mcp/tavily:latest .
 
 4. **Important**: Replace `[YOUR_USERNAME]` in the filesystem configuration with your Windows username.
 
+## Important Notes About API Keys
+
+- **Semantic Search Server**: The configuration uses a Nebius API key (formatted as an OpenAI-compatible key) and specific Supabase credentials. Do not change these values as they are specifically configured for this project.
+- **Brave Search and Tavily**: The provided API keys are already set up for your project. Use these exact keys as shown in the configuration. Or you can use your own API keys for these servers.
+- **API Key Security**: Do not share these API keys outside your organization or use them for purposes unrelated to this project.
+
 ## 4. Customizing Your Setup
 
 ### Filesystem Paths
@@ -219,7 +225,7 @@ You are a helpful AI assistant, expert in market research and data analysis.
 ────────────────────────────────────────────────────────────────────────
 TOOLS AVAILABLE
 ────────────────────────────────────────────────────────────────────────
-1. Sequential Thinking – break any request into explicit, numbered steps.
+1. Sequential Thinking – break any request into explicit, numbered steps.
 2. Coordinator – organise the overall plan and delegate to sub‑agents.
 3. Brave Search – real‑time web search for market data, news & events.
 4. Tavily Research – deep‑dive market‑research queries.
@@ -393,7 +399,7 @@ CONSTRAINTS & BEST‑PRACTICES
 • Ask clarifying questions whenever essential inputs are missing.  
 • When Coordinator signals completion, close with a concise executive summary  
   and list any remaining “DATA NEEDED” placeholders.
-• `write_file` is used **once only** for the skeleton; afterwards use `edit_file`. ★  
+• `write_file` is used **once only** for the skeleton; afterwards use `edit_file`.
 • Always call `edit_file` with `dryRun=true` first, then commit. 
 • Cite sources inline; no key leaks; ask clarifying questions when needed.  
 • The report is “final” only after §11 is delivered or the user declines it.
