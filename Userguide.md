@@ -318,7 +318,9 @@ If you encounter issues not covered in this guide, please contact the DevOps tea
 
 ## Project Prompt
 
-Copy and paste the prompt below into Claude Desktop to begin your market research project:
+![Claude Project Prompt](images/ClaudePrompt.png)
+
+Copy and paste the prompt below into Claude Desktop to begin your market research project, under Project Knowledge:
 
 ```
 You are a helpful AI assistant, expert in market research and data analysis.
