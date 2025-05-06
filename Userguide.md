@@ -213,11 +213,11 @@ Below is a simplified step-by-step guide to set up all the necessary servers:
         "run", 
         "--rm",
         "-i",
-        "-e", "OPENAI_API_KEY=eyJhbGciOiJIUzI1NiIsImtpZCI6IlV6SXJWd1h0dnprLVRvdzlLZWstc0M1akptWXBvX1VaVkxUZlpnMDRlOFUiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMDYzNjQ3ODE2NjczMzU0ODIwMSIsInNjb3BlIjoib3BlbmlkIG9mZmxpbmVfYWNjZXNzIiwiaXNzIjoiYXBpX2tleV9pc3N1ZXIiLCJhdWQiOlsiaHR0cHM6Ly9uZWJpdXMtaW5mZXJlbmNlLmV1LmF1dGgwLmNvbS9hcGkvdjIvIl0sImV4cCI6MTkwMTg2NzM4NywidXVpZCI6ImJjMzM2MDk3LWU2MDItNDNkZS05MjEwLTNkODJhMGI0NjE1YiIsIm5hbWUiOiJNYXJrZXRSZXNlYXJjaCIsImV4cGlyZXNfYXQiOiIyMDMwLTA0LTA4VDA4OjI5OjQ3KzAwMDAifQ.GtyN7cJkIiE6gX4Ub2ah2PZ_flRjN6q8ijo65ks42U8",
+        "-e", "OPENAI_API_KEY=INSERT_YOUR_OPENAI_API_KEY",
         "-e", "OPENAI_API_BASE=https://api.studio.nebius.com/v1/",
         "-e", "DEEPSEEK_AGENT_MODEL_ID=deepseek-ai/DeepSeek-V3",
-        "-e", "SUPABASE_URL=https://zubdnsmuyqkckqhanpfu.supabase.co",
-        "-e", "SUPABASE_SERVICE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp1YmRuc211eXFrY2txaGFucGZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE3NDg5MzgsImV4cCI6MjA1NzMyNDkzOH0.Db2tO50bZNHgQUEJp4KXNaOvFBSWs-n6tzZtlFJiwSc",
+        "-e", "SUPABASE_URL=INSERT_YOUR_SUPABASE_URL",
+        "-e", "SUPABASE_SERVICE_KEY=INSERT_YOUR_SUPABASE_SERVICE_KEY",
         "--network=mcp-network",
         "semantic-search-mcp-server",
         "-s"
@@ -241,7 +241,7 @@ Below is a simplified step-by-step guide to set up all the necessary servers:
         "run",
         "--rm",
         "-i",
-        "-e", "BRAVE_API_KEY=BSAtpVIImIunF99zkZsUCBpIX4aEGIA",
+        "-e", "BRAVE_API_KEY=INSERT_YOUR_BRAVE_API_KEY",
         "mcp/brave-search"
       ]
     },
@@ -251,7 +251,7 @@ Below is a simplified step-by-step guide to set up all the necessary servers:
         "run",
         "--rm",
         "-i",
-        "-e", "TAVILY_API_KEY=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",
+        "-e", "TAVILY_API_KEY=INSERT_YOUR_TAVILY_API_KEY",
         "mcp/tavily"
       ]
     }
